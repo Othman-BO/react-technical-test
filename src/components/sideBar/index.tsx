@@ -1,7 +1,12 @@
 import Input from "@mui/joy/Input";
 import Sheet from "@mui/joy/Sheet";
+import EditIssue from "../EditIssue";
+import { useIssueStore } from "../../store/issueStore";
+import Users from "../users";
 
 export default function Sidebar() {
+  const { issueInfo } = useIssueStore();
+
   return (
     <Sheet
       className="Sidebar"
@@ -19,7 +24,9 @@ export default function Sidebar() {
         borderColor: "divider",
       }}
     >
-      <Input value="facebook/react/issues/7901" />
+      <Input value={`facebook/react/issues/${issueInfo?.issueNumber}`} />
+      <EditIssue />
+      <Users />
     </Sheet>
   );
 }
