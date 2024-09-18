@@ -72,9 +72,9 @@ export default function MessagesPane() {
               </Chip>
             }
           >
-            {issue.title}
+            Titre : {issue.title}
           </Typography>
-          <Typography level="body-sm">{issue.user.login}</Typography>
+          <Typography level="body-sm">Auteur : {issue.user.login}</Typography>
 
           <Typography level="body-sm">Statut : {getStatus(issue.state)}</Typography>
         </Stack>
